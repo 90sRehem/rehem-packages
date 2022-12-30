@@ -1,10 +1,9 @@
 {
-  "name": "cli",
-  "version": "0.0.1",
+  "name": "@rehem-packages/cli",
+  "version": "0.1.0",
   "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "author": "jonathan rehem <jonathan.de.oliveira@live.com>",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",

@@ -1,7 +1,6 @@
 {
   "name": "@rehem-packages/tsconfig",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "files": [
     "base.json",
     "nextjs.json",
