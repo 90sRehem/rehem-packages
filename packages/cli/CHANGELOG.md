@@ -1,5 +1,11 @@
 # cli
 
+## 0.4.0
+
+### Minor Changes
+
+- add funtion to captilize first letter of component name
+
 ## 0.3.0
 
 ### Minor Changes

@@ -7,6 +7,7 @@ import {
   createComponentTests,
   createIndex,
 } from "../templates/react";
+import { capitalizeFirstLetter } from "../utils";
 
 interface CreateComponentOptions {
   styles: boolean;
@@ -53,55 +54,68 @@ export class CreateReactComponentCommand extends CommandRunner {
   }
 
   public async createFullcomponent(name: string, path?: string): Promise<void> {
+    const currentName = capitalizeFirstLetter(name);
     if (path) {
       mkdir(path, (err) => {
-        if (err) throw err;
+        if (err) {
+          console.log(err);
+        }
+        writeFile(
+          `${path}/${currentName}.tsx`,
+          createComponent(name),
+          writeFileErrorHandler,
+        );
+        writeFile(
+          `${path}/${currentName}.styles.ts`,
+          createComponentStyles(name),
+          writeFileErrorHandler,
+        );
+        writeFile(`${path}/index.ts`, createIndex(name), writeFileErrorHandler);
+        writeFile(
+          `${path}/${currentName}.test.ts`,
+          createComponentTests(name),
+          writeFileErrorHandler,
+        );
       });
-      writeFile(
-        `${path}/${name}.tsx`,
-        createComponent(name),
-        writeFileErrorHandler,
-      );
-      writeFile(
-        `${path}/${name}.styles.ts`,
-        createComponentStyles(name),
-        writeFileErrorHandler,
-      );
-      writeFile(`${path}/index.ts`, createIndex(name), writeFileErrorHandler);
-      writeFile(
-        `${path}/${name}.test.ts`,
-        createComponentTests(name),
-        writeFileErrorHandler,
-      );
-      console.log(`
-Successfully created component
-${name}
-|
-+-- ./${name}.tsx
-|
-+-- ./${name}.styles.ts
-|
-+-- ./${name}.ts
-|
-+-- ./${name}.test.ts
-`);
     } else {
-      writeFile(`./${name}.tsx`, createComponent(name), writeFileErrorHandler);
-      writeFile(
-        `./${name}.styles.ts`,
-        createComponentStyles(name),
-        writeFileErrorHandler,
-      );
-      writeFile(`./index.ts`, createIndex(name), writeFileErrorHandler);
-      writeFile(
-        `./${name}.test.ts`,
-        createComponentTests(name),
-        writeFileErrorHandler,
-      );
-      console.log(
-        `Successfully created component ${name}.tsx, ${name}.styles.ts, index.ts, ${name}.test.ts`,
-      );
+      mkdir(currentName, (err) => {
+        if (err) {
+          console.log(err);
+        }
+
+        writeFile(
+          `${currentName}/${currentName}.tsx`,
+          createComponent(name),
+          writeFileErrorHandler,
+        );
+        writeFile(
+          `${currentName}/${currentName}.styles.ts`,
+          createComponentStyles(name),
+          writeFileErrorHandler,
+        );
+        writeFile(
+          `${currentName}/index.ts`,
+          createIndex(name),
+          writeFileErrorHandler,
+        );
+        writeFile(
+          `${currentName}/${currentName}.test.ts`,
+          createComponentTests(name),
+          writeFileErrorHandler,
+        );
+      });
     }
+    console.log(`
+  Successfully created component ${currentName} structure:
+  |
+  +-- ./${currentName}.tsx
+  |
+  +-- ./${currentName}.styles.ts
+  |
+  +-- ./${currentName}.ts
+  |
+  +-- ./${currentName}.test.ts
+  `);
   }
 
   @Option({
