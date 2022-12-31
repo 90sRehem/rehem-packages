@@ -1,14 +1,16 @@
 {
   "name": "@rehem-packages/cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "author": "jonathan rehem <jonathan.de.oliveira@live.com>",
   "license": "MIT",
   "bin": {
     "rehem": "dist/main.js"
   },
-  "files": ["dist"],
-  "scripts": {
+  "files": [
+    "dist"
+  ],
+   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

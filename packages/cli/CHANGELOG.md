@@ -1,5 +1,11 @@
 # cli
 
+## 0.3.0
+
+### Minor Changes
+
+- add bin entry file
+
 ## 0.2.0
 
 ### Minor Changes
