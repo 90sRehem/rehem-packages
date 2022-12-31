@@ -7,6 +7,7 @@
   "bin": {
     "rehem": "dist/main.js"
   },
+  "files": ["dist"],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
