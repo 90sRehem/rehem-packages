@@ -17,8 +17,8 @@
     "shallow-equal-object": "^1.1.1"
   },
   "devDependencies": {
-    "@rehem-packages/eslint-config": "*",
-    "@rehem-packages/tsconfig": "*",
+    "@rehem-packages/eslint-config": "workspace:*",
+    "@rehem-packages/tsconfig": "workspace:*",
     "@types/node": "^18.11.18",
     "tsup": "^6.5.0"
   }
