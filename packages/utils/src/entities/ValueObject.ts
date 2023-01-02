@@ -1,7 +1,7 @@
 import { shallowEqual } from 'shallow-equal-object';
 import { Notifiable } from './Notifiable';
 
-type IValueObjectProps = Record<string, unknown>;
+type IValueObjectProps = Record<string, any>;
 
 export abstract class ValueObject<
   T extends IValueObjectProps,
