@@ -1,3 +1,3 @@
 {
-    "extends": ["@rehem-packages/eslint-config/base"]
+  "extends": ["@rehem-packages/eslint-config"]
 }
