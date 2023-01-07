@@ -7,15 +7,11 @@ import {
   createComponentTests,
   createIndex,
 } from "../templates/react";
-import { capitalizeFirstLetter } from "../utils";
+import { capitalizeFirstLetter, writeFileErrorHandler } from "../utils";
 
 interface CreateComponentOptions {
   styles: boolean;
   path: string;
-}
-
-function writeFileErrorHandler(err: unknown) {
-  if (err) throw err;
 }
 
 @Command({
@@ -33,7 +29,7 @@ function writeFileErrorHandler(err: unknown) {
 export class CreateReactComponentCommand extends CommandRunner {
   async run(inputs: string[], options?: CreateComponentOptions): Promise<void> {
     try {
-      const name = inputs[0];
+      const name = capitalizeFirstLetter(inputs[0]);
       if (options.path) {
         this.createFullcomponent(name, options.path);
       } else {
