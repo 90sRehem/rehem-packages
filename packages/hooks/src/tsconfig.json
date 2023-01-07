@@ -1,0 +1,6 @@
+{
+  "extends": "@rehem-packages/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "ESNext"
+  }
+}

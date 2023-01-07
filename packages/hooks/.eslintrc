@@ -1,0 +1,8 @@
+{
+  "extends": ["@rehem-packages/eslint-config/react.js"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
