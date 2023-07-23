@@ -1,99 +1,62 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true
+  env: {
+    browser: true,
+    es2021: true,
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
+  extends: [
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks",
-    "prettier"
-  ],
-  "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".tsx"
-        ]
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "camelcase": "off",
-    "@typescript-eslint/ban-types": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "prettier/prettier": "error",
-    "react/prop-types": "off",
-    "react/require-default-props": "off",
-    "react/function-component-definition": "off",
-    "react/jsx-props-no-spreading": "off",
-    "@typescript-eslint/naming-convention": [
+  plugins: ["@typescript-eslint", "react", "jsx-a11y"],
+  rules: {
+    "prettier/prettier": [
       "error",
       {
-        "selector": "interface",
-        "format": [
-          "PascalCase"
-        ],
-        "prefix": ["I"],
-      },
-      {
-        "selector": "typeAlias",
-        "format": [
-          "PascalCase"
-        ],
-        "prefix": ["I"],
+        printWidth: 80,
+        tabWidth: 2,
+        singleQuote: false,
+        trailingComma: "all",
+        arrowParens: "always",
+        semi: false,
+        endOfLine: "auto",
       },
     ],
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "argsIgnorePattern": "_"
-      }
+        argsIgnorePattern: "_",
+      },
     ],
-    "react/no-unused-prop-types": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-proptypes": "warn",
+    "jsx-a11y/aria-unsupported-elements": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+    "jsx-a11y/role-supports-aria-props": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/alt-text": [
+      "warn",
       {
-        "devDependencies": true
-      }
+        elements: ["img"],
+        img: ["Image"],
+      },
     ],
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": [
-          "@/features/*/*"
-        ]
-      }
-    ]
   },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    }
-  }
-}
+  settings: {
+    react: {
+      version: "detect",
+    },
+    "import/parsers": {
+      [require.resolve("@typescript-eslint/parser")]: [".ts", ".tsx", ".d.ts"],
+    },
+  },
+};

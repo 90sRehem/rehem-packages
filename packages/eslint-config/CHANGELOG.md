@@ -1,5 +1,11 @@
 # @rehem-packages/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- Update the react config and add the node config
+
 ## 0.2.0
 
 ### Minor Changes
