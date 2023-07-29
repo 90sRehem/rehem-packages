@@ -1,5 +1,11 @@
 # @rehem-packages/eslint-config
 
+## 1.0.0
+
+### Major Changes
+
+- Send to production with the base configs
+
 ## 0.3.0
 
 ### Minor Changes
