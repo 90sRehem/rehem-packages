@@ -1,5 +1,11 @@
 # @rehem-packages/eslint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- fix release
+
 ## 1.0.0
 
 ### Major Changes
