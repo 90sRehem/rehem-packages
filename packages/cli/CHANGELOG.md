@@ -1,5 +1,11 @@
 # cli
 
+## 0.6.0
+
+### Minor Changes
+
+- React's functional component creation templates have been refactored to generate more concise components
+
 ## 0.5.0
 
 ### Minor Changes

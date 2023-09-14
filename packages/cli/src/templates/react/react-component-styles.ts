@@ -1,4 +1,4 @@
-export function createComponentStyles(name) {
+export function createComponentStyles() {
   return `import styled from "styled-components";
-export const ${name}Container = styled.div(props => ({}));`;
+export const Container = styled.div\`\`;`;
 }

@@ -63,7 +63,7 @@ export class CreateReactComponentCommand extends CommandRunner {
         );
         writeFile(
           `${path}/${currentName}.styles.ts`,
-          createComponentStyles(name),
+          createComponentStyles(),
           writeFileErrorHandler,
         );
         writeFile(`${path}/index.ts`, createIndex(name), writeFileErrorHandler);
@@ -86,7 +86,7 @@ export class CreateReactComponentCommand extends CommandRunner {
         );
         writeFile(
           `${currentName}/${currentName}.styles.ts`,
-          createComponentStyles(name),
+          createComponentStyles(),
           writeFileErrorHandler,
         );
         writeFile(
