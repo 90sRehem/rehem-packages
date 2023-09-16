@@ -21,16 +21,7 @@ module.exports = {
         arrowParens: "always",
         semi: true,
         endOfLine: "auto",
-      },
-    ],
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        selector: "interface",
-        format: [
-          "PascalCase"
-        ],
-        prefix: ["I"],
+        bracketSpacing: true,
       },
     ],
     "@typescript-eslint/no-unused-vars": [

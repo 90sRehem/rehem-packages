@@ -1,5 +1,11 @@
 # @rehem-packages/eslint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- remove interface name convention and include bracket spacing rule
+
 ## 1.1.0
 
 ### Minor Changes
